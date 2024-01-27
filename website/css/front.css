@@ -1,0 +1,160 @@
+html {
+    scroll-behavior: smooth;
+  }
+.bg-gray{
+    background: rgb(245, 247, 251);
+}
+
+.underline {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+}
+.underline:after {
+content: '';
+display: block;
+margin: auto;
+height: 3px;
+width: 0px;
+background: transparent;
+transition: width .5s ease, background-color .5s ease;
+}
+.underline:hover:after {
+width: 100%;
+background: #00008b;
+}
+
+.rounded-table{
+    border-radius: 1rem !important;
+}
+.rounded-up{
+    border-top-right-radius: 1rem;
+    border-top-left-radius:1rem;
+}
+
+.max-h{
+    min-height: 225px;
+}
+
+.hover-effect {
+    transition: 0.25s;
+}
+
+.hover-effect:hover {
+    margin-top: -0.5rem;
+}
+
+.heighter{
+    line-height: 2rem;                                                                                                            
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.8;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.text-discord {
+  color: #00008b;
+}
+
+.bg-discord {
+  background-color: #00008b;
+}
+
+
+.btn-discord {
+  color: #fff;
+  background-color: #00008b;
+  border-color: #00008b;
+
+}
+
+.btn-discord:hover {
+  color: #919190;
+  background-color: #00008b;
+  border-color: #00008b;
+}
