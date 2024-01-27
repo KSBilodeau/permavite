@@ -1,11 +1,9 @@
-use std::net::TcpListener;
+use rouille::Response;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    rouille::start_server("127.0.0.1:7878", move |request| {
+        println!("{}", request.raw_query_string());
 
-    for stream in listener.incoming() {
-        let _ = stream.unwrap();
-
-        println!("Connection established!")
-    }
+        Response::text("Hello, World!")
+    })
 }
