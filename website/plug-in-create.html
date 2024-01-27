@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Creation Request</title>
+    <link rel="icon" href="svg/logo.svg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/front.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+        background: linear-gradient(to right, #a7a7f6, #00008b); /* Adjust colors as per preference */
+        }
+        .main-color {
+            color: #00008b;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+        <a class="text-discord text-decoration-none px-1" href="#"><img src="svg/logo.svg" alt="logo" width="80" height="80">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link underline h5" href="index.html"><i class="bi bi-house-fill mr-1"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link underline h5" href="#"><i class="bi bi-plug-fill"></i>Plug-ins</a>
+                </li>
+            </ul>
+            <!-- New ul for login link aligned to the right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link underline h5 mx-2" href="auth_pages/auth.html"><i class="bi bi-box-arrow-in-right mr-2"></i>Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card custom-container">
+                    <div class="card-header main-color">Plugin Creation Request</div>
+                    <div class="card-body">
+                        <!-- Timelines -->
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Hour</button>
+                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Week</button>
+                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Month</button>
+                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Year</button>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="request">Request:</label>
+                                <textarea class="form-control" id="request" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description:</label>
+                                <textarea class="form-control" id="description" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="iconFile">Icon File Submission:</label>
+                                <input type="file" class="form-control-file" id="iconFile" required>
+                            </div>
+                            <button type="submit" class="btn btn-discord">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

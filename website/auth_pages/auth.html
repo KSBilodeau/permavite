@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="icon" href="../svg/logo.svg"">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/front.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+    <script src="js/activaPage.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+        <a class="text-discord text-decoration-none px-1" href="#"><img src="../svg/logo.svg" alt="logo" width="80" height="80">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link underline h5" href="../index.html"><i class="bi bi-house-fill mr-1"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link underline h5" href="../plug-in-create.html"><i class="bi bi-plug-fill"></i>Plug-ins</a>
+                </li>
+            </ul>
+            <!-- New ul for login link aligned to the right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link underline h5 mx-2" href="#"><i class="bi bi-box-arrow-in-right mr-2"></i>Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 form-container">
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-block text-white">Login</button>
+                    <p class="mt-3">Don't have an account? <a href="#" id="toggleRegisterForm">Register here</a></p>
+                </form>
+
+                <!-- Registration Form -->
+                <form id="registerForm">
+                    <h2>Register</h2>
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" class="form-control" id="registerUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-block text-white">Register</button>
+                    <p class="mt-3">Already have an account? <a href="#" id="toggleLoginForm">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        
+
+        $(document).ready(function() {
+            // Toggle between login and registration forms
+            $("#toggleRegisterForm").click(function(e) {
+                e.preventDefault();
+                $("#loginForm").hide();
+                $("#registerForm").show();
+            });
+
+            $("#toggleLoginForm").click(function(e) {
+                e.preventDefault();
+                $("#registerForm").hide();
+                $("#loginForm").show();
+            });
+        });
+    </script>
+</body>
+
+</html>
