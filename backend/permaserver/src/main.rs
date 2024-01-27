@@ -3,7 +3,9 @@ use std::net::TcpListener;
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
 
-    for Ok(_) in listener.incoming() {
+    for stream in listener.incoming() {
+        let _ = stream.unwrap();
+
         println!("Connection established!")
     }
 }
