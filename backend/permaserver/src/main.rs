@@ -38,7 +38,11 @@ fn main() -> Result<(), Error>{
                 let read = linkdb.begin_read().unwrap();
                 let table = read.open_table(LINK_TABLE).unwrap();
 
-                format!("INVITE LINK: {}", table.get(id.as_str()).unwrap().unwrap().value())
+                let Some(link) = table.get(id.as_str()).unwrap() else {
+                   return Response::empty_404();
+                };
+
+                format!("INVITE LINK: {}", link.unwrap().value())
             },
             (POST) (/api/v1/register_plugin) => {
                 "REGISTER PLUGIN".into()
