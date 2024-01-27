@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 rouille = "3.6.2"
+redb = "1.5.0"
