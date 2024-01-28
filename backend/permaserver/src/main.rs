@@ -90,8 +90,6 @@ fn main() -> anyhow::Result<()> {
                     .send_json(
                         ureq::json!({
                             "max_age": 0,
-                            "target_type": 2,
-                            "target_application_id": 1200665926098497576u64,
                         }))
                     .unwrap();
 
