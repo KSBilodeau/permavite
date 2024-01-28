@@ -84,7 +84,6 @@ fn main() -> anyhow::Result<()> {
                 resp
             },
             (POST) (/api/v1/generate_perma_link/{channel_id: u64}) => {
-                println!("{}", env!("BOT_TOKEN"));
                 let new_link = ureq::post(format!("https://discord.com/api/v10/channels/{}/invites", channel_id).as_str())
                     .set("Authorization", env!("BOT_TOKEN"))
                     .send_json(
@@ -99,8 +98,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
-                println!("{:?}", resp_json);
-                Response::text(format!("https://discord.gg/{}", resp_json[4]))
+                Response::text(format!("https://discord.gg/{}", resp_json[6]))
             },
             _ => Response::text("Unknown")
         )
