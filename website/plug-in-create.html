@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+    <nav class="navbar navbar-expand-lg navbar-light bg-gray p-0">
         <a class="text-discord text-decoration-none px-1" href="#"><img src="svg/logo.svg" alt="logo" width="80" height="80">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,19 +46,17 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card custom-container">
+                <div class="card custom-container mt-0 mb-5">
                     <div class="card-header main-color">Plugin Creation Request</div>
                     <div class="card-body">
-                        <!-- Timelines -->
-                        <div class="mb-3">
-                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Hour</button>
-                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Week</button>
-                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Month</button>
-                            <button type="button" class="btn btn-discord-outline-primary mr-2">1 Year</button>
-                        </div>
+                
                         <form>
                             <div class="form-group">
-                                <label for="request">Request:</label>
+                                <label for="request">Link validation request:</label>
+                                <textarea class="form-control" id="request" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="request">Link creation request:</label>
                                 <textarea class="form-control" id="request" rows="5" required></textarea>
                             </div>
                             <div class="form-group">
