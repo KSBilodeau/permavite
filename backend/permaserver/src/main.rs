@@ -5,7 +5,7 @@ use std::path::Path;
 
 const _USER_TABLE: TableDefinition<&str, Vec<&str>> = TableDefinition::new("user_data");
 const LINK_TABLE: TableDefinition<&str, (&str, u64)> = TableDefinition::new("link_data");
-const _ACCESS_TABLE: TableDefinition<&str, i64> = TableDefinition::new("access_data");
+const _ACCESS_TABLE: TableDefinition<i64, (&str, &str)> = TableDefinition::new("access_data");
 const _PLUGIN_TABLE: TableDefinition<&str, (&str, &str, &str, Vec<u8>)> =
     TableDefinition::new("plugin_data");
 
@@ -53,6 +53,8 @@ fn main() -> anyhow::Result<()> {
                         let link_state = ureq::get(format!("https://discord.com/api/v10/invites/{}", link_code).as_str())
                             .call()
                             .unwrap();
+
+                        println!("Made it here");
 
                         if link_state.status() == 404 {
                             let new_link = ureq::post(format!("https://discord.com/api/v10/channels/{}/invites", channel_id).as_str())
