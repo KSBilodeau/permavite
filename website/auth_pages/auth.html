@@ -13,7 +13,7 @@
     <!-- Custom Styles -->
     <style>
         body {
-        background: linear-gradient(to right, #a7a7f6, #00008b); /* Adjust colors as per preference */
+            background: linear-gradient(to right, #535399, #00008b); /* Adjust colors as per preference */
         }
     </style>
     <script src="js/activaPage.js"></script>
@@ -21,28 +21,33 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-gray p-0">
-        <a class="text-discord text-decoration-none px-1" href="#"><img src="../svg/logo.svg" alt="logo" width="80" height="80">
+        <a class="text-discord text-decoration-none px-1" href="../index.html"><img src="../svg/logo.svg" alt="logo" width="80" height="80">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link underline h5" href="../index.html"><i class="bi bi-house-fill mr-1"></i>Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item mx-2">
+                    <a class="nav-link underline h5" href="../index.html"><i class="bi bi-house-fill h4 mr-1"></i>Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link underline h5" href="../plug-in-create.html"><i class="bi bi-plug-fill"></i>Plug-ins</a>
+                <li class="nav-item mx-2">
+                    <a class="nav-link underline h5" href="../plug-in-create.html"><i class="bi bi-plus-circle mr-1 h4 "></i>Create</a>
+                </li>
+                
+                <li class="nav-item mx-2">
+                    <a class="nav-link underline h5" href="../plug-connect.html"><i class="bi bi-link-45deg mr-1 h4"></i>Connect</a>
                 </li>
             </ul>
             <!-- New ul for login link aligned to the right -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link underline h5 mx-2" href="#"><i class="bi bi-box-arrow-in-right mr-2"></i>Login</a>
+                    <a class="nav-link underline h5 mx-2" href="auth_pages/auth.html"><i class="bi bi-box-arrow-in-right mr-2 h4"></i>Login</a>
                 </li>
             </ul>
         </div>
     </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 form-container">

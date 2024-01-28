@@ -153,13 +153,13 @@ background: #00008b;
 }
 
 .bg-discord {
-  background-color: #00008b;
+  background: linear-gradient(to right, #535399, #00008b)
 }
 
 
 .btn-discord {
   color: #fff;
-  background-color: #00008b;
+  background: linear-gradient(to right, #3b3b92, #00008b);
   border-color: #00008b;
 
 }

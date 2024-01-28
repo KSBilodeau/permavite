@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Connect</title>
+
     <title>Plugin Creation Request</title>
     <link rel="icon" href="svg/logo.svg">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/front.css">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
-    <!-- Custom CSS -->
     <style>
         body {
-        background: linear-gradient(to right, #343491, #00008b);
+        background: linear-gradient(to right, #535399, #00008b);
         }
         .main-color {
             color: #00008b;
@@ -23,15 +24,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('img/bg-create.jpeg');
+            background-image: url('img/bg-connect.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 15%; /* Adjust as needed */
+            opacity: 10%; /* Adjust as needed */
             z-index: -1; /* Ensure the container is behind other content */
         }
     </style>
 </head>
-<body>
+<body >
     <nav class="navbar navbar-expand-lg navbar-light bg-gray p-0">
         <a class="text-discord text-decoration-none px-1" href="index.html"><img src="svg/logo.svg" alt="logo" width="80" height="80">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,48 +62,28 @@
     </nav>
 
     <div class="background-container"></div>
-    <div class="container mt-0">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="form-container mb-5">
-                    <div class="card-body pt-0">
-                        
-                        <form>
-                            <h2 class="text-center">Plugin Creation Request</h2>
-                            <div class="form-group">
-                                <label for="request">Link validation request:</label>
-                                <textarea class="form-control" id="request" rows="5" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="request">Link creation request:</label>
-                                <textarea class="form-control" id="request" rows="5" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description:</label>
-                                <textarea class="form-control" id="description" rows="3" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="iconFile">Icon File Submission:</label>
-                                <input type="file" class="form-control-file" id="iconFile" required>
-                            </div>
-                            <button type="submit" class="btn btn-discord">Submit Request</button>
-                        </form>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-6 offset-md-3 form-container">
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <h2>Connect</h2>
+                    <button type="submit" class="btn btn-custom btn-block text-white my-3">Invite Bot</button>
+                    <div class="form-group">
+                        <label for="loginUsername">Channel id</label>
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Enter channel id">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Link</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="permavite.com/invite/name">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
-    
-
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
