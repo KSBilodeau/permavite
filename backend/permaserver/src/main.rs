@@ -30,7 +30,6 @@ fn main() -> anyhow::Result<()> {
 
     // Create all the database objects to prep for future transactions
 
-    let _userdb = Database::create(&*shellexpand::tilde("~/userdb"))?;
     let _accessdb = Database::create(&*shellexpand::tilde("~/accessdb"))?;
     let _plugindb = Database::create(&*shellexpand::tilde("~/plugindb"))?;
 
@@ -83,7 +82,7 @@ fn main() -> anyhow::Result<()> {
 
                 resp
             },
-            (POST) (/api/v1/generate_perma_link/{channel_id: u64}) => {
+            (POST) (/api/v1/gen_link/{link_id: String}/{channel_id: u64}) => {
                 let new_link = ureq::post(format!("https://discord.com/api/v10/channels/{}/invites", channel_id).as_str())
                     .set("Authorization", env!("BOT_TOKEN"))
                     .send_json(
@@ -97,6 +96,16 @@ fn main() -> anyhow::Result<()> {
                                 .split('\"')
                                 .map(String::from)
                                 .collect();
+
+                let discord_link = format!("https://discord.gg/{}", resp_json[5]);
+
+                let userdb = Database::create(&*shellexpand::tilde("~/userdb")).unwrap();
+                let write = userdb.begin_write().unwrap();
+                {
+                    let mut table = write.open_table(LINK_TABLE).unwrap();
+                    table.insert(&*link_id, (&*discord_link, channel_id)).unwrap();
+                }
+                write.commit().unwrap();
 
                 Response::text(format!("https://discord.gg/{}", resp_json[5]))
             },
