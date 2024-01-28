@@ -68,7 +68,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
-                            println!("{}", format!("https://discord.gg/{}", resp_json[4]));
+                            println!("{}", format!("https://discord.gg/{}", resp_json[5]));
 
                             Response::redirect_302(format!("https://discord.gg/{}", resp_json[4]))
                         } else {
