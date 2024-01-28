@@ -97,7 +97,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
-                let discord_link = format!("https://discord.gg/{}", resp_json[5]);
+                let discord_link = resp_json[5].clone();
 
                 let linkdb = Database::create(&*shellexpand::tilde("~/linkdb")).unwrap();
                 let write = linkdb.begin_write().unwrap();
@@ -107,7 +107,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 write.commit().unwrap();
 
-                Response::text(format!("https://discord.gg/{}", resp_json[5]))
+                Response::text(format!("https://discord.gg/{}", discord_link))
             },
             _ => Response::text("Unknown")
         )
