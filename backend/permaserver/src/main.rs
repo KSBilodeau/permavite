@@ -99,6 +99,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
+                println!("{:?}", resp_json);
                 Response::text(format!("https://discord.gg/{}", resp_json[4]))
             },
             _ => Response::text("Unknown")
