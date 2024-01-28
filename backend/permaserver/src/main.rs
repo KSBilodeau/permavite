@@ -107,7 +107,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 write.commit().unwrap();
 
-                Response::text(format!("https://discord.gg/{}", discord_link))
+                Response::redirect_302(format!("https://discord.gg/{}", discord_link))
             },
             _ => Response::text("Unknown")
         )
