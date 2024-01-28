@@ -98,7 +98,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
-                Response::text(format!("https://discord.gg/{}", resp_json[6]))
+                Response::text(format!("https://discord.gg/{}", resp_json[5]))
             },
             _ => Response::text("Unknown")
         )
