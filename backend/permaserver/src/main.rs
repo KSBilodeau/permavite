@@ -51,12 +51,9 @@ fn main() -> anyhow::Result<()> {
                         let channel_id = link.value().1;
 
                         let link_state = ureq::get(format!("https://discord.com/api/v10/invites/{}", link_code).as_str())
-                            .call()
-                            .unwrap();
+                            .call();
 
-                        println!("Made it here");
-
-                        if link_state.status() == 404 {
+                        if let Err(_) = link_state {
                             let new_link = ureq::post(format!("https://discord.com/api/v10/channels/{}/invites", channel_id).as_str())
                                 .set("Authorization", env!("BOT_TOKEN"))
                                 .send_json(
