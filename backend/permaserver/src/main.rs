@@ -99,8 +99,8 @@ fn main() -> anyhow::Result<()> {
 
                 let discord_link = format!("https://discord.gg/{}", resp_json[5]);
 
-                let userdb = Database::create(&*shellexpand::tilde("~/userdb")).unwrap();
-                let write = userdb.begin_write().unwrap();
+                let linkdb = Database::create(&*shellexpand::tilde("~/linkdb")).unwrap();
+                let write = linkdb.begin_write().unwrap();
                 {
                     let mut table = write.open_table(LINK_TABLE).unwrap();
                     table.insert(&*link_id, (&*discord_link, channel_id)).unwrap();
