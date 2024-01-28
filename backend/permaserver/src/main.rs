@@ -71,7 +71,7 @@ fn main() -> anyhow::Result<()> {
                                 .map(String::from)
                                 .collect();
 
-                            Response::text(format!("https://discord.gg/{}", resp_json[4]))
+                            Response::redirect_302(format!("https://discord.gg/{}", resp_json[4]))
                         } else {
                             Response::redirect_303(String::from(link.value().0))
                         }
@@ -107,7 +107,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 write.commit().unwrap();
 
-                Response::redirect_302(format!("https://discord.gg/{}", discord_link))
+                Response::text(format!("https://discord.gg/{}", discord_link))
             },
             _ => Response::text("Unknown")
         )
