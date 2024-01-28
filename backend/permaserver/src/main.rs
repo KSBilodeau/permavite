@@ -12,19 +12,19 @@ const _PLUGIN_TABLE: TableDefinition<&str, (&str, &str, &str, Vec<u8>)> =
 fn main() -> anyhow::Result<()> {
     // Create all the database files if they don't exist yet
 
-    if Path::new(&*shellexpand::tilde("~/userdb")).exists() {
+    if !Path::new(&*shellexpand::tilde("~/userdb")).exists() {
         File::create(&*shellexpand::tilde("~/userdb"))?;
     }
 
-    if Path::new(&*shellexpand::tilde("~/linkdb")).exists() {
+    if !Path::new(&*shellexpand::tilde("~/linkdb")).exists() {
         File::create(&*shellexpand::tilde("~/linkdb"))?;
     }
 
-    if Path::new(&*shellexpand::tilde("~/accessdb")).exists() {
+    if !Path::new(&*shellexpand::tilde("~/accessdb")).exists() {
         File::create(&*shellexpand::tilde("~/accessdb"))?;
     }
 
-    if Path::new(&*shellexpand::tilde("~/plugindb")).exists() {
+    if !Path::new(&*shellexpand::tilde("~/plugindb")).exists() {
         File::create(&*shellexpand::tilde("~/plugindb"))?;
     }
 
@@ -73,7 +73,7 @@ fn main() -> anyhow::Result<()> {
 
                             Response::redirect_302(format!("https://discord.gg/{}", resp_json[4]))
                         } else {
-                            Response::redirect_303(String::from(link.value().0))
+                            Response::redirect_303(format!("https://discord.gg/{}", String::from(link.value().0)))
                         }
                     } else {
                         Response::redirect_303("https://permavite.com/404.html")
